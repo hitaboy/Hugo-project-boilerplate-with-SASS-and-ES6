@@ -18,15 +18,41 @@ This theme does not use any CSS library. This will allow you to manipulate the d
 
 Inside the folder of your Hugo site run:
 
-    $ cd themes
-    $ git clone https://github.com:hitaboy/Hugo-project-boilerplate-with-SASS-and-ES6.git
+    $ git clone git@github.com:hitaboy/Hugo-project-boilerplate-with-SASS-and-ES6.git
+    $ cd Hugo-project-boilerplate-with-SASS-and-ES6/
+    $ cd themes/clean_theme/
+    $ yarn
 
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
-
 
 ## Getting started
 
 After installing the boilerplate successfully it requires just a few more steps to get your site running.
+
+### Configure Hugo
+
+In order to configure your site edit the config.toml
+
+#### Theme
+Inside themes there is just one theme calles *clean_theme*
+You can modify this one or duplicate it to have a new base and mantain the *clean_theme* as an example.
+The theme used for Hugo is defined in config.toml this way
+```
+theme = "clean_theme"
+```
+
+#### Languages
+Define desired languages in [languages] block.
+You can override default Params for language ( Title, etc... )
+```
+[languages]
+  [languages.en]
+    title = "Your new site"
+    weight = 1
+  [languages.es]
+    title = "Tu nuevo sitio"
+    weight = 2
+```
 
 ### Nearly finished
 
