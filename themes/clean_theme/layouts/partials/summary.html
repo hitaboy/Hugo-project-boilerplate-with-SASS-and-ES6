@@ -1,0 +1,27 @@
+{{ $featured_image := .Params.featured_image }}
+<article class="article article--summary">
+    <div class="article article article--summary">
+      {{ if .Params.featured_image }}
+          {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
+        {{ $featured_image := (trim $featured_image "/") | absURL }}
+        <div>
+          <a href="{{.URL}}" class="db grow">
+            <img src="{{ $featured_image }}" class="img" alt="image from {{ .Title }}">
+          </a>
+        </div>
+      {{ end }}
+      <div class="article--content">
+        <h1 class="article--content__title">
+          <a href="{{.URL}}">
+            {{ .Title }}
+            </a>
+        </h1>
+        <div class="article--content__summary">
+          {{ .Summary }}
+        </div>
+          <a href="{{.URL}}">{{$.Param "read_more_copy" | default "read more" }}</a>
+        {{/* TODO: add author
+        <p class="article--content__author">By {{ .Author }}</p> */}}
+      </div>
+    </div>
+</article>

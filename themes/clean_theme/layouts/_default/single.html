@@ -1,0 +1,26 @@
+{{ define "main" }}
+  <article class="article article--single">
+    <h1>is POST</h1>
+    <header class="article--single__header">
+      <p>
+          {{/*
+          CurrentSection allows us to use the section title instead of inferring from the folder.
+          https://gohugo.io/variables/page/#section-variables-and-methods
+          */}}
+        {{with .CurrentSection.Title }}{{. | upper }}{{end}}
+      </p>
+      <h1>
+        {{- .Title -}}
+      </h1>
+      {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
+      <time class="article--single__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{- .Date.Format "January 2, 2006" -}}
+      </time>
+    </header>
+
+    <main class="article--single__content">
+      {{- .Content -}}
+      {{- partial "tags.html" . -}}
+    </main>
+  </article>
+{{ end }}

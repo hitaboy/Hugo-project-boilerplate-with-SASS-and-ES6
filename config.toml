@@ -1,0 +1,17 @@
+baseURL = "http://yournewsite.com"
+languageCode = "en-us"
+title = "Your new site"
+theme = "clean_theme"
+
+DefaultContentLanguage = "en"
+
+[languages]
+  [languages.en]
+    title = "Your new site"
+    weight = 1
+  [languages.es]
+    title = "Tu nueva página"
+    weight = 2
+
+[params]
+  headerBackground = "#f00"

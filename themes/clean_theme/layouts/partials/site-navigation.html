@@ -1,0 +1,21 @@
+<nav class="nav" role="navigation">
+  <div class="nav__wrapper">
+    <a href="{{ .Site.BaseURL }}" class="nav__title">
+      {{ .Site.Title }}
+    </a>
+    <div class="nav__menu">
+      {{ if .Site.Menus.main }}
+        <ul class="pl0 mr3">
+          {{ range .Site.Menus.main }}
+          <li class="nav__menu__item">
+            <a class="" href="{{ .URL }}" title="{{ .Name }} page">
+              {{ .Name }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      {{ end }}
+      {{ partial "social-follow.html" . }}
+    </div>
+  </div>
+</nav>

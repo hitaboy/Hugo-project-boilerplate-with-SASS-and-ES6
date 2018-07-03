@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article class="article article--list">
+    <h1>NEWS LIST</h1>
+  <main class="article--list__content">
+    {{- .Content -}}
+  </main>
+    <section class="article--list__the-list">
+      {{ range .Paginator.Pages }}
+        <div class="article--list__the-list__item">
+          {{- partial "summary.html" . -}}
+        </div>
+      {{ end }}
+    </section>
+    {{- template "_internal/pagination.html" . -}}
+  </article>
+{{ end }}
